@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com"; // Import EmailJS
 
 const Enquiry: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -28,20 +28,20 @@ const Enquiry: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4007/send-email", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify(formData),
-      });
+      // Use EmailJS to send the email
+      const response = await emailjs.send(
+        "service_vedo2lq",
+        "template_rkffoyc",
+        formData,
+        "wQUvPB8n2Lm8GOVQK"
+      );
 
-      if (!response.ok) {
+      if (response.status === 200) {
+        console.log("Email sent successfully");
+        setSuccessMessage("Email sent successfully!");
+      } else {
         throw new Error("Failed to send email");
       }
-
-      console.log("Email sent successfully");
-      setSuccessMessage("Email sent successfully!");
     } catch (error) {
       console.error("Error sending email:", error);
     }
@@ -138,9 +138,9 @@ const Enquiry: React.FC = () => {
                 className="w-full p-2 rounded bg-white text-black"
                 onChange={handleChange}
               >
-                <option value="E2P Gas Genset">E2P Gas Genset</option>
-                <option value="Diesel Generator">Diesel Generator</option>
-                <option value="Solar Panels">Solar Panels</option>
+                <option value="Industrial gas genset">Industrial gas genset</option>
+                {/* <option value="Diesel Generator">Diesel Generator</option>
+                <option value="Solar Panels">Solar Panels</option> */}
               </select>
             </div>
 
