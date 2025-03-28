@@ -30,8 +30,8 @@ const Enquiry: React.FC = () => {
     try {
       // Use EmailJS to send the email
       const response = await emailjs.send(
-        "service_vedo2lq",
-        "template_rkffoyc",
+        "service_vedo2lq",//service id
+        "template_rkffoyc",//template
         formData,
         "wQUvPB8n2Lm8GOVQK"
       );
