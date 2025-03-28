@@ -1,5 +1,5 @@
 import logo from "../assets/logo2.png";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="w-full ">
@@ -31,7 +31,7 @@ const Navbar = () => {
             Products <i className="fa-solid fa-chevron-down"></i>
           </div>
           <div className=" h-12 w-3xs flex items-center justify-center rounded-lg px-4 bg-green-600 hover:bg-green-700 text-sm  text-white">
-            <a href="/enquiry">BUSINESS ENQUIRY</a>
+            <Link to="/enquiry">BUSINESS ENQUIRY</Link>
           </div>
         </div>
       </div>

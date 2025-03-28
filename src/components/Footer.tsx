@@ -1,5 +1,6 @@
 
 import logo from "../assets/logo2.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-gray-200 text-gray-800 py-8">
@@ -64,21 +65,18 @@ const Footer = () => {
           <p>Plot 609F Lekan Asuni Close, Omole Phase 2,<br/> Olowora Oshodi-Isolo, Lagos Nigeria</p>
           <p>
             Email:{" "}
-            <a
-              href="mailto:skspowertech@gmail.com 
-"
-              className="text-blue-600"
-            >
+            <Link to="mailto:skspowertech@gmail.com" className="text-blue-600">
+            
               skspowertech@gmail.com
-            </a>
+            </Link>
           </p>
 
           <p>
             Phone:{" "}
-            <a href="tel:+2349046827127" className="text-blue-600">
+            <Link to="tel:+2349046827127" className="text-blue-600">
               {" "}
               +234 9046827127
-            </a>
+            </Link>
           </p>
           <h3 className="font-semibold text-red-700 ">
             SKS INDUSTRIAL SERVICE PRIVATE LIMITED
@@ -89,22 +87,18 @@ const Footer = () => {
           </p>
           <p>
             Email:{" "}
-            <a
-              href="mailto:skspowertech@gmail.com 
-"
-              className="text-blue-600"
-            >
+            <Link to="mailto:skspowertech@gmail.com" className="text-blue-600">
               skspowertech@gmail.com
-            </a>
+            </Link>
           </p>
 
           <p>Phone:{" "}
-            <a href="tel:+919660649686" className="text-blue-600">
+            <Link to="tel:+919660649686" className="text-blue-600">
               {" "}
               +91 9660649686
-            </a>
+            </Link>
             ,{" "}
-            <a href="tel:+919837014453" className="text-blue-600"> 9837014453</a>
+            <Link to="tel:+919837014453" className="text-blue-600"> 9837014453</Link>
           </p>
         </div>
       </div>
