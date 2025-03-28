@@ -2,11 +2,7 @@ import React, { useState, useRef } from "react";
 
 import { motion } from "framer-motion";
 
-interface EnquiryProps {
-  formRef: React.RefObject<HTMLDivElement | null>;
-}
-
-const Enquiry: React.FC<EnquiryProps> = ({ formRef }) => {
+const Enquiry: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     organization: "",
@@ -16,6 +12,9 @@ const Enquiry: React.FC<EnquiryProps> = ({ formRef }) => {
     address: "",
     message: "",
   });
+
+  const formRef = useRef<HTMLDivElement | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -29,16 +28,21 @@ const Enquiry: React.FC<EnquiryProps> = ({ formRef }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/send-email", {
+      console.log(1);
+      const response = await fetch("http://localhost:4007/send-email", {
+        headers: {
+          "Content-Type": "application/json",
+        },
         method: "POST",
         body: JSON.stringify(formData),
       });
-
+      console.log(2);
       if (!response.ok) {
         throw new Error("Failed to send email");
       }
-
+      console.log(3);
       console.log("Email sent successfully");
+      setSuccessMessage("Email sent successfully!");
     } catch (error) {
       console.error("Error sending email:", error);
     }
@@ -63,7 +67,10 @@ const Enquiry: React.FC<EnquiryProps> = ({ formRef }) => {
         with you.
       </motion.div>
 
-      <div
+      {successMessage ? (
+        <div className="mt-4 text-green-500 text-center">{successMessage}</div>
+      ) : (
+        <div
         ref={formRef}
         className=" mt-8 max-w-lg mx-auto p-6 bg-[#0C1E56] text-white rounded-md"
       >
@@ -176,7 +183,10 @@ const Enquiry: React.FC<EnquiryProps> = ({ formRef }) => {
           </button>
         </form>
       </div>
-    </>
+
+      )}
+
+          </>
   );
 };
 

@@ -5,6 +5,7 @@ dotenv.config();
 import cookieParser from "cookie-parser";
 
 import cors from "cors";
+import {enquiry} from "./api/index"
 
 
 
@@ -21,11 +22,12 @@ export const createServer = (): Express => {
     })
   );
 
+
   app.get("/", (req: Request, res: Response) => {
     res.send("hello world");
   });
 
- 
+  enquiry(app);
 
   return app;
 };
