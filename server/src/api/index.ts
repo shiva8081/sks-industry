@@ -11,12 +11,8 @@ app.use(bodyParser.json());
 export const enquiry = (app: Express) => {
   // app.use(bodyParser.json());
 
- 
-
   app.post("/send-email", async (req: Request, res: Response) => {
     try {
-      console.log("Received request:", req.body);
-
       const { name, organization, email, mobile, product, address, message } =
         req.body;
       if (!name || !email || !mobile) {
@@ -49,10 +45,10 @@ export const enquiry = (app: Express) => {
       const info = await transporter.sendMail(mailOptions);
       console.log("Email sent:", info.response);
 
-      return res.status(200).json({ message: "Email sent successfully" }); 
+      return res.status(200).json({ message: "Email sent successfully" });
     } catch (error) {
       console.error("Error sending email:", error);
-      return res.status(500).json({ error: "Failed to send email" }); 
+      return res.status(500).json({ error: "Failed to send email" });
     }
   });
 };
