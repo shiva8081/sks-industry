@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import about from "../assets/image5.jpeg"
 
 const About = () => {

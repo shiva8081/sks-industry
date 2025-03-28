@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import client from "../assets/image6.jpg"
-import { motion } from "framer-motion";
+
 import client1 from "../assets/image7.jpg"
 
 const ValuableClinet = () => {
@@ -13,7 +13,7 @@ const ValuableClinet = () => {
         return () => clearInterval(interval);
     }, []);
   return (
-    <div className="w-full mt-10 flex flex-col items-center justify-center   ">
+    <div className="w-full mt-10 flex flex-col items-center justify-center">
         <div className="w-1/2 text-center  ">
           <h1 className=" text-2xl font-mulish   text-[#941100] tracking-wide   font-semibold">
             Valuable Clients
