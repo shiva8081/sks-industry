@@ -1,43 +1,91 @@
 import logo from "../assets/logo2.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="w-full ">
-      <div className="border-b border-black upper">
-        <div className="flex justify-end mr-72 gap-2 pb-2 ">
-          <div className="flex items-center justify-center gap-2 rounded-b-3xl bg-[#4e4e4e] text-white px-5 py-3">
-            <i className="fa-solid fa-phone text-sm  text-green-400 "></i>
-            <span className="text-sm"> <a href="tel:+2349046827127">+234 9046827127</a></span>
-            <span> | </span>
-            <i className="fa-solid fa-envelope text-green-400 text-sm "></i>
-            <span className="text-sm"> <a href="mailto:skspowertech@gmail.com">skspowertech@gmail.com</a></span>
-          </div>
+    <div className="w-full bg-white shadow-md">
+      {/* Top Navbar */}
+     <div className="border-b border-black w-full">
+      {/* Mobile View */}
+      <div className="flex md:hidden justify-center p-2 bg-gray-700 text-white text-sm w-full">
+        <div className="flex items-center gap-2">
+          <i className="fa-solid fa-phone text-sm text-green-400"></i>
+          <a href="tel:+2349046827127" className="text-sm">Call Us</a>
+          <span>|</span>
+          <i className="fa-solid fa-envelope text-green-400 text-sm"></i>
+          <a href="mailto:skspowertech@gmail.com" className="text-sm">Email Us</a>
         </div>
       </div>
-      <div className="middle p-2  border-b border-black flex justify-around">
-        <div className="logo">
-          <img
-            className="w-3xs h-28 hover:scale-110 hover:opacity-80 duration-300 transition-all "
-            src={logo}
-            alt="logo"
-          />
+      
+      {/* Desktop View */}
+      <div className="hidden md:flex justify-end px-10 gap-2 p-2 bg-gray-700 text-white w-full">
+        <div className="flex items-center gap-2">
+          <i className="fa-solid fa-phone text-sm text-green-400"></i>
+          <a href="tel:+2349046827127" className="text-sm">+234 9046827127</a>
+          <span>|</span>
+          <i className="fa-solid fa-envelope text-green-400 text-sm"></i>
+          <a href="mailto:skspowertech@gmail.com" className="text-sm">skspowertech@gmail.com</a>
         </div>
-        <div className="flex gap-2 items-center ">
-          <div className="px-4 text-sm font-semibold">Contact Us</div>
-          <div className="px-4 text-sm font-semibold">
+      </div>
+    </div>
+      {/* Main Navbar */}
+      <div className="flex items-center justify-between px-6 py-3 md:px-10 border-b">
+        {/* Logo */}
+        <img
+          className="h-16 md:h-20 transition-transform duration-300 hover:scale-110"
+          src={logo}
+          alt="logo"
+        />
+
+        {/* Menu Toggle for Mobile */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-2xl"
+        >
+          {isOpen ? <FiX /> : <FiMenu />}
+        </button>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-6 text-sm font-semibold">
+          <Link to="/" className="hover:text-green-600">
+            Home
+          </Link>
+          <span className="cursor-pointer">
             Media <i className="fa-solid fa-chevron-down"></i>
-          </div>
-          <div className="px-4 text-sm font-semibold">
+          </span>
+          <span className="cursor-pointer">
             Products <i className="fa-solid fa-chevron-down"></i>
-          </div>
-          <div className=" h-12 w-3xs flex items-center justify-center rounded-lg px-4 bg-green-600 hover:bg-green-700 text-sm  text-white">
-            <Link to="/enquiry">BUSINESS ENQUIRY</Link>
-          </div>
+          </span>
+          <Link
+            to="/enquiry"
+            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
+          >
+            Business Enquiry
+          </Link>
         </div>
       </div>
-      <div className=" lower flex justify-center items-center gap-2 border-b border-black h-14 bg-[#494949] text-white">
-        <div className="px-4 text-sm font-semibold">Home</div>
-      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden flex flex-col items-center gap-4 p-4 bg-gray-800 text-white">
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            Home
+          </Link>
+          <span className="cursor-pointer">Media</span>
+          <span className="cursor-pointer">Products</span>
+          <Link
+            to="/enquiry"
+            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
+            onClick={() => setIsOpen(false)}
+          >
+            Business Enquiry
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
