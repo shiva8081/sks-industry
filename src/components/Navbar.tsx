@@ -54,12 +54,13 @@ const Navbar = () => {
           <Link to="/" className="hover:text-green-600">
             Home
           </Link>
-          <span className="cursor-pointer">
-            Media <i className="fa-solid fa-chevron-down"></i>
-          </span>
-          <span className="cursor-pointer">
-            Products <i className="fa-solid fa-chevron-down"></i>
-          </span>
+          <Link to="/why-choose-sks" className="hover:text-green-600">
+            Why Choose SKS
+          </Link>
+          <Link to="/our-mission" className="hover:text-green-600">
+            Our Mission
+          </Link>
+          
           <Link
             to="/enquiry"
             className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
@@ -75,8 +76,12 @@ const Navbar = () => {
           <Link to="/" onClick={() => setIsOpen(false)}>
             Home
           </Link>
-          <span className="cursor-pointer">Media</span>
-          <span className="cursor-pointer">Products</span>
+          <Link to="/why-choose-sks" onClick={() => setIsOpen(false)}>
+            Why Choose SKS
+          </Link>
+          <Link to="/our-mission" onClick={() => setIsOpen(false)}>
+            Our Mission
+          </Link>
           <Link
             to="/enquiry"
             className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
