@@ -40,48 +40,54 @@ const About = () => {
                 <h3 className="font-semibold text-lg mb-2">
                   Our Comprehensive Services
                 </h3>
-                <ul className="list-disc pl-6 space-y-4">
-                  <li>
+                <p className="mb-4">
+                  We offer a wide range of dependable services to our valued
+                  customers:
+                </p>
+                <ul className="space-y-4">
+                  <li className="flex flex-col">
                     <span className="font-medium">
-                      Installation of D.G. Sets:
-                    </span>{" "}
-                    Our expert team ensures that all installations comply with
-                    local, state, and national electrical regulations, providing
-                    you with a safe and reliable setup.
+                      Installation of Gas Engines
+                    </span>
+                    <span className="text-gray-700">
+                      Our expert team ensures that all installations comply with
+                      local, state, and national electrical regulations,
+                      providing you with a safe and reliable setup.
+                    </span>
                   </li>
-                  <li>
+                  <li className="flex flex-col">
                     <span className="font-medium">
-                      Overhauling of D.G. Sets:
-                    </span>{" "}
-                    Regular maintenance is key to reliability. We offer
-                    comprehensive overhauling services to keep your generators
-                    in optimal condition.
+                      Overhauling of Gas Engines
+                    </span>
+                    <span className="text-gray-700">
+                      Regular maintenance is key to reliability. We offer
+                      comprehensive overhauling services to keep your generators
+                      in optimal condition.
+                    </span>
                   </li>
-                  <li>
-                    <span className="font-medium">Repair of D.G. Sets:</span>{" "}
-                    Our skilled technicians are available 24/7 to address any
-                    generator issues promptly, minimizing downtime.
+                  <li className="flex flex-col">
+                    <span className="font-medium">Repair of Gas Engines</span>
+                    <span className="text-gray-700">
+                      Our team is available 24/7 to address any generator issues
+                      promptly, minimizing downtime.
+                    </span>
                   </li>
-                  <li>
+                  <li className="flex flex-col">
                     <span className="font-medium">
-                      Annual Maintenance Contracts (AMC):
-                    </span>{" "}
-                    We provide tailored AMC packages to ensure your generators
-                    operate efficiently year-round.
+                      Annual Maintenance Contracts (AMC)
+                    </span>
+                    <span className="text-gray-700">
+                      We provide tailored AMC packages to ensure your generators
+                      operate efficiently year-round.
+                    </span>
                   </li>
-                  <li>
-                    <span className="font-medium">
-                      Soundproof Canopy & AMF Panels:
-                    </span>{" "}
-                    We offer soundproof solutions and automatic mains failure
-                    panels for seamless operations.
-                  </li>
-                  <li>
-                    <span className="font-medium">
-                      D.G. Sets with Mobility:
-                    </span>{" "}
-                    We offer generator sets mounted on two/four-wheel trolleys
-                    for enhanced mobility and easy relocation.
+                  <li className="flex flex-col">
+                    <span className="font-medium">Soundproof Canopy</span>
+                    <span className="text-gray-700">
+                      Our soundproof canopies are designed to reduce noise
+                      levels, ensuring a quieter and more comfortable
+                      environment.
+                    </span>
                   </li>
                 </ul>
               </>
