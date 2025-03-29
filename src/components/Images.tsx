@@ -26,11 +26,10 @@ const Images = () => {
 
     >
       <motion.img
-        src={image[currentImage]}
-        className="h-96 w-full"
-        alt="image"
-        
-      />
+          src={image[currentImage]}
+          className="w-full h-64 md:h-96 object-cover"
+          alt="image"
+        />
     </motion.div>
     <About />
     <ValuableClinet />

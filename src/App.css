@@ -1,3 +1,12 @@
 .op{
   border: 1px solid red;
 }
+@media (max-width: 768px) {
+  .middle {
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo img {
+    height: 50px; /* Reduce size */
+  }
+}
