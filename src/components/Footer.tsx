@@ -106,7 +106,7 @@ const Footer = () => {
       {/* Download Button */}
       <div className="flex justify-center mt-4">
         <button className="bg-green-500 text-white py-2 px-4 rounded">
-          Enquire Now
+          <Link to="/enquiry">Enquire Now</Link>
         </button>
       </div>
     </div>
